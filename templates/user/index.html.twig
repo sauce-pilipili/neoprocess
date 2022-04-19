@@ -1,0 +1,35 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Les membres{% endblock %}
+
+{% block body %}
+   {{ include('_includes/navigation.html.twig') }}
+    <section class="section-content">
+        <div class="content">
+            <div class="content-title">
+                <h1>Les membres</h1>
+                <div class="content-title_row">
+                    <form class="form-search" action="">
+                        <input class="form-search_input" type="text" name="" id="" placeholder="Rechercher un membre">
+                        <input class="form-search_button" type="button" value="">
+                    </form>
+                    <a href="{{ path('app_user_new') }}" class="bouton-1" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14.07" height="14.07" viewBox="0 0 14.07 14.07">
+                            <path id="ajouter" d="M11.035,4a.879.879,0,0,1,.879.879v5.276h5.276a.879.879,0,1,1,0,1.759H11.915v5.276a.879.879,0,1,1-1.759,0V11.915H4.879a.879.879,0,0,1,0-1.759h5.276V4.879A.879.879,0,0,1,11.035,4Z" transform="translate(-4 -4)" fill="#fff"/>
+                        </svg>
+                        <span>Ajouter un membre</span>
+                    </a>
+                </div>
+            </div>
+            <div class="content-table">
+                <table>
+                    <tbody id="body-list">
+                  {{ include('user/_contentUser.html.twig') }}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

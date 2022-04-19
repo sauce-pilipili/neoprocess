@@ -1,0 +1,103 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block title %}titre{% endblock %}
+{% block body %}
+    {{ include('_includes/navigation.html.twig') }}
+<section class="section-content">
+    <div class="content">
+        <div class="content-title">
+            <h1 style="flex: none">Titre</h1>
+            <a class="bouton-1" href="{{ path('admin_index') }}">Quitter <i class="fas fa-times"></i></a>
+        </div>
+        <div>
+            {% for message in app.flashes('success') %}
+                <div class="greenalert">
+                    <div class="close" id="close" onclick="$('.fas').parents('.greenalert').remove();"><i
+                                class="fas fa-times"></i></div>
+                    <div class="success-alert">
+                        <p>{{ message }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('danger') %}
+                <div class="redalert">
+                    <div class="close" id="close" onclick="$('.fas').parents('.redalert').remove();"><i
+                                class="fas fa-times"></i></div>
+                    <div class="danger-alert">
+                        <p>{{ message }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="content-table">
+    {# {{ include('dossiers/_form.html.twig', {'button_label': 'Update'}) }} #}
+    {{ form_start(form) }}
+    {{ form_widget(form.nom) }}
+    {{ form_widget(form.prenom) }}
+    {{ form_widget(form.pieces,{'attr': {'onchange':"change()"}}) }}
+    <style>
+        frame{
+            zoom: 0.15;
+            -moz-transform:scale(0.75);
+            -moz-transform-origin: 0 0;
+            -o-transform: scale(0.75);
+            -o-transform-origin: 0 0;
+            -webkit-transform: scale(0.75);
+            -webkit-transform-origin: 0 0;
+        }
+    </style>
+    <div id="document">
+        {% for dos in pieces %}
+
+
+            <h3>{{ dos }}</h3>
+            {{ form_row(attribute(form,'piece_'~(loop.index-1))) }}
+            {{ form_row(attribute(form,'valid_'~(loop.index-1)),{'attr': {'onchange':"ajaxValid(checked,this.id)"}}) }}
+            {% if attribute(dossier,'piece'~(loop.index-1)) != null %}
+                <iframe src="{{ asset('clientsFiles/') }}{{ attribute(dossier,'piece'~(loop.index-1)) }}#toolbar=0"
+                        width="80%" height="800px"></iframe>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+
+
+
+    <a href="{{ path('app_dossiers_index') }}">back to list</a>
+
+    {{ include('dossiers/_delete_form.html.twig') }}
+
+    <script>
+        function change() {
+            let div = document.getElementById('document')
+            div.style.display = "none";
+            alert('vous devez soumettre le formulaire avant de proceder aux changement de document neccessaires a sa validation')
+        }
+        function ajaxValid(value, index){
+            const Url = new URL(window.location.href);
+            const data = new FormData();
+            data.append('data', value)
+            data.append('index', index.substr(-1))
+            fetch(Url.pathname,
+                {
+                    method: "POST",
+                    headers:{
+                        "X-Requested-With": "XMLHttpRequest"
+                    },
+                    body: data
+
+                }).then(response => response.json()).then(
+                    data => {
+                        console.log(data)
+                    }
+            )
+        }
+    </script>
+
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,140 @@
+<nav>
+    <div class="bloc-nav">
+        <div class="bloc-nav_menu">
+            <div class="menu-logo">
+                <a href="#">
+                    <img src="" alt="Logo de neo-process" id="logo">
+                </a>
+            </div>
+            <div class="menu-id">
+                <div class="menu-id_row-1">
+                    <p class="id">{{ app.user.prenom }}</p>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <a href="{{ path('admin_index') }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19">
+                            <path id="home" d="M11.336,2.253a1,1,0,0,1,1.329,0l9,8a1,1,0,1,1-1.329,1.495l-.336-.3V19a2,2,0,0,1-2,2H6a2,2,0,0,1-2-2V11.449l-.336.3a1,1,0,1,1-1.329-1.495ZM6,9.671V19H9V14a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1v5h3V9.671L12,4.338ZM13,19V15H11v4Z" transform="translate(-2 -2)" fill="#013c25"/>
+                        </svg>
+                        <span>Tableau de bord</span>
+                    </a>
+                </li>
+                <li>
+
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropbtn" href="{{ path('admin_index') }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                            <g id="tag" transform="translate(-2 -2)">
+                                <path id="Tracé_259" data-name="Tracé 259" d="M2,3A1,1,0,0,1,3,2h8a1,1,0,0,1,.707.293l10,10a1,1,0,0,1,0,1.414l-8,8a1,1,0,0,1-1.414,0l-10-10A1,1,0,0,1,2,11ZM4,4v6.586l9,9L19.586,13l-9-9Z" fill="#013c25"/>
+                                <path id="Tracé_260" data-name="Tracé 260" d="M9,7.5A1.5,1.5,0,1,1,7.5,6,1.5,1.5,0,0,1,9,7.5Z" fill="#013c25"/>
+                            </g>
+                        </svg>
+                        <span>Clients</span>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="{{ path('app_dossiers_index') }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                <g id="tag" transform="translate(-2 -2)">
+                                    <path id="Tracé_259" data-name="Tracé 259" d="M2,3A1,1,0,0,1,3,2h8a1,1,0,0,1,.707.293l10,10a1,1,0,0,1,0,1.414l-8,8a1,1,0,0,1-1.414,0l-10-10A1,1,0,0,1,2,11ZM4,4v6.586l9,9L19.586,13l-9-9Z" fill="#013c25"/>
+                                    <path id="Tracé_260" data-name="Tracé 260" d="M9,7.5A1.5,1.5,0,1,1,7.5,6,1.5,1.5,0,0,1,9,7.5Z" fill="#013c25"/>
+                                </g>
+                            </svg>
+                            <span>Liste des dossiers</span>
+                        </a>
+                        <a href="{{ path('admin_index') }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                <g id="tag" transform="translate(-2 -2)">
+                                    <path id="Tracé_259" data-name="Tracé 259" d="M2,3A1,1,0,0,1,3,2h8a1,1,0,0,1,.707.293l10,10a1,1,0,0,1,0,1.414l-8,8a1,1,0,0,1-1.414,0l-10-10A1,1,0,0,1,2,11ZM4,4v6.586l9,9L19.586,13l-9-9Z" fill="#013c25"/>
+                                    <path id="Tracé_260" data-name="Tracé 260" d="M9,7.5A1.5,1.5,0,1,1,7.5,6,1.5,1.5,0,0,1,9,7.5Z" fill="#013c25"/>
+                                </g>
+                            </svg>
+                            <span>Lots de dossiers</span>
+                        </a>
+                        <a href="{{ path('admin_index') }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                <g id="tag" transform="translate(-2 -2)">
+                                    <path id="Tracé_259" data-name="Tracé 259" d="M2,3A1,1,0,0,1,3,2h8a1,1,0,0,1,.707.293l10,10a1,1,0,0,1,0,1.414l-8,8a1,1,0,0,1-1.414,0l-10-10A1,1,0,0,1,2,11ZM4,4v6.586l9,9L19.586,13l-9-9Z" fill="#013c25"/>
+                                    <path id="Tracé_260" data-name="Tracé 260" d="M9,7.5A1.5,1.5,0,1,1,7.5,6,1.5,1.5,0,0,1,9,7.5Z" fill="#013c25"/>
+                                </g>
+                            </svg>
+                            <span>Liste des contrôles</span>
+                        </a>
+                    </div>
+                </li>
+
+
+{#                <li>#}
+{#                    <a href="locations.html">#}
+{#                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20">#}
+{#                            <path id="document-empty" d="M4,4A2,2,0,0,1,6,2h8a1,1,0,0,1,.707.293l5,5A1,1,0,0,1,20,8V20a2,2,0,0,1-2,2H6a2,2,0,0,1-2-2ZM17.586,8,14,4.414V8ZM12,4H6V20H18V10H13a1,1,0,0,1-1-1Z" transform="translate(-4 -2)" fill="#013c25"/>#}
+{#                        </svg>#}
+{#                        <span>Location de patins</span>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <li>#}
+{#                    <a href="{{ path('app_equipes_categories_index') }}">#}
+{#                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19.482" viewBox="0 0 18 19.482">#}
+{#                            <path id="flag" d="M5,4.8a10.969,10.969,0,0,1,3.626-.211,12.736,12.736,0,0,1,3.023.85l.03.011a14.531,14.531,0,0,0,3.447.951A12.606,12.606,0,0,0,19,6.24V15.2a10.972,10.972,0,0,1-3.626.211,12.739,12.739,0,0,1-3.023-.85l-.03-.011A14.534,14.534,0,0,0,8.874,13.6,12.607,12.607,0,0,0,5,13.76ZM19.757,4.03a11.764,11.764,0,0,1-4.383.384,12.736,12.736,0,0,1-3.023-.85l-.03-.011A14.531,14.531,0,0,0,8.874,2.6a13.719,13.719,0,0,0-5.1.423A1,1,0,0,0,3,4V21a1,1,0,0,0,2,0V15.8a10.972,10.972,0,0,1,3.626-.211,12.739,12.739,0,0,1,3.023.85l.03.011a14.534,14.534,0,0,0,3.447.951,13.739,13.739,0,0,0,5.117-.428A1,1,0,0,0,21,16V5a1,1,0,0,0-1.243-.97Z" transform="translate(-3 -2.518)" fill="#013c25" fill-rule="evenodd"/>#}
+{#                        </svg>#}
+{#                        <span>Equipes</span>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <li>#}
+{#                    <a href="{{ path('app_matchs_index') }}">#}
+{#                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19">#}
+{#                            <path id="calendar" d="M9,2a1,1,0,0,1,1,1V4h4V3a1,1,0,0,1,2,0V4h3a2,2,0,0,1,2,2V19a2,2,0,0,1-2,2H5a2,2,0,0,1-2-2V6A2,2,0,0,1,5,4H8V3A1,1,0,0,1,9,2ZM8,6H5V9H19V6H16V7a1,1,0,0,1-2,0V6H10V7A1,1,0,0,1,8,7Zm11,5H5v8H19Z" transform="translate(-3 -2)" fill="#013c25"/>#}
+{#                        </svg>#}
+{#                        <span>Matchs</span>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <li>#}
+{#                    <a href="{{ path('app_infos_index') }}">#}
+{#                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">#}
+{#                            <g id="tag" transform="translate(-2 -2)">#}
+{#                                <path id="Tracé_259" data-name="Tracé 259" d="M2,3A1,1,0,0,1,3,2h8a1,1,0,0,1,.707.293l10,10a1,1,0,0,1,0,1.414l-8,8a1,1,0,0,1-1.414,0l-10-10A1,1,0,0,1,2,11ZM4,4v6.586l9,9L19.586,13l-9-9Z" fill="#013c25"/>#}
+{#                                <path id="Tracé_260" data-name="Tracé 260" d="M9,7.5A1.5,1.5,0,1,1,7.5,6,1.5,1.5,0,0,1,9,7.5Z" fill="#013c25"/>#}
+{#                            </g>#}
+{#                        </svg>#}
+{#                        <span>Documents</span>#}
+{#                    </a>#}
+{#                </li>#}
+
+
+                <li>
+                    <a href="{{ path('app_user_index') }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                            <path id="users" d="M10,4a4,4,0,1,0,4,4A4,4,0,0,0,10,4ZM4,8a6,6,0,1,1,6,6A6,6,0,0,1,4,8ZM16.828,3.757a1,1,0,0,1,1.414,0,6,6,0,0,1,0,8.485,1,1,0,1,1-1.414-1.414,4,4,0,0,0,0-5.657A1,1,0,0,1,16.828,3.757Zm.7,13a1,1,0,0,1,1.213-.728,3.969,3.969,0,0,1,2.652,2.148A6.408,6.408,0,0,1,22,21a1,1,0,0,1-2,0,4.429,4.429,0,0,0-.394-1.928,1.973,1.973,0,0,0-1.348-1.1A1,1,0,0,1,17.53,16.757ZM6.5,18A2.783,2.783,0,0,0,4,21a1,1,0,0,1-2,0,4.771,4.771,0,0,1,4.5-5h7A4.771,4.771,0,0,1,18,21a1,1,0,0,1-2,0,2.783,2.783,0,0,0-2.5-3Z" transform="translate(-2 -2)" fill="#013c25"/>
+                        </svg>
+                        <span>Membres</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ path('user_profil',{id: app.user.id}) }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20">
+                            <path id="user" d="M12,4a4,4,0,1,0,4,4A4,4,0,0,0,12,4ZM6,8a6,6,0,1,1,6,6A6,6,0,0,1,6,8ZM8,18a3,3,0,0,0-3,3,1,1,0,0,1-2,0,5,5,0,0,1,5-5h8a5,5,0,0,1,5,5,1,1,0,0,1-2,0,3,3,0,0,0-3-3Z" transform="translate(-3 -2)" fill="#013c25"/>
+                        </svg>
+                        <span>profil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('app_logout') }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18">
+                            <g id="log-out" transform="translate(-3 -3)">
+                                <path id="Tracé_268" data-name="Tracé 268" d="M11,20a1,1,0,0,0-1-1H5V5h5a1,1,0,0,0,0-2H5A2,2,0,0,0,3,5V19a2,2,0,0,0,2,2h5A1,1,0,0,0,11,20Z" fill="#013c25" fill-rule="evenodd"/>
+                                <path id="Tracé_269" data-name="Tracé 269" d="M21.714,12.7A1,1,0,0,0,22,12V12a1,1,0,0,0-.293-.7l-4-4a1,1,0,0,0-1.414,1.414L18.586,11H9a1,1,0,0,0,0,2h9.586l-2.293,2.293a1,1,0,0,0,1.414,1.414l4-4Z" fill="#013c25"/>
+                            </g>
+                        </svg>
+                        <span>Deconnexion</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="bloc-nav_credit">
+            <a href="https://agencebackstages.fr">© Backstages 2022</a>
+        </div>
+    </div>
+</nav>

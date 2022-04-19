@@ -1,0 +1,68 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block title %}dashboard{% endblock %}
+{% block body %}
+    {{ include('_includes/navigation.html.twig') }}
+    <section class="section-content">
+        <div class="content">
+            <div>
+                {% for message in app.flashes('success') %}
+                    <div class="greenalert">
+                        <div class="close" id="close" onclick="$('.fas').parents('.greenalert').remove();"><i
+                                    class="fas fa-times"></i></div>
+                        <div class="success-alert">
+                            <p>{{ message }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% for message in app.flashes('danger') %}
+                    <div class="redalert">
+                        <div class="close" id="close" onclick="$('.fas').parents('.redalert').remove();"><i
+                                    class="fas fa-times"></i></div>
+                        <div class="danger-alert">
+                            <p>{{ message }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+
+            <div class="content-table">
+                <form method="post">
+                    <input class="input" id="text" type="text" name="text" placeholder="nom">
+                    <select id="select" onchange="input(this)">
+                        <option id="select" value=""></option>
+                        <option id="select" value="valuesfdgsdftgsd">valuesfdgsdftgsd</option>
+                        <option id="select" value="valuedd">valuedd</option>
+                    </select>
+                    <button type="submit">valid</button>
+                </form>
+
+                <script>
+
+                    function input(value){
+console.log(value.value)
+                        document.getElementById("text").value = value.value;
+                    }
+                </script>
+            </div>
+        </div>
+    </section>
+    <style>
+        form{
+            position: relative;
+        }
+        input{
+            margin: 0;
+            position: absolute;
+        }
+        #text{
+
+            height: 35px;
+            width: 200px;
+        }
+        #select{
+            height: 35px;
+            width: 230px;
+        }
+    </style>
+{% endblock %}

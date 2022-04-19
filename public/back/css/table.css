@@ -1,0 +1,70 @@
+/* TABLEAUX */
+.table {
+    width: 100%;
+    font-family: var(--font-text);
+    border-collapse: collapse;
+}
+
+table .table-title {
+    background-color: var(--form);
+    font-weight: bold;
+}
+
+.content-table_article td:nth-child(2) {
+    text-align: end;
+}
+
+table td {
+    border-bottom: 1px solid var(--border);
+    color: var(--color-text);
+}
+
+tr:hover {
+    background-color: var(--form);
+    border-radius: 5px;
+}
+
+.table-cat td,
+table .table-title td,
+.table-row td {
+    padding: 10px 20px;
+}
+
+.table-row_action {
+    display: flex;
+    justify-content: end;
+}
+
+.table-sub_cat td {
+    padding: 10px 20px 10px 30px;
+}
+
+.table-article td:first-child {
+    padding: 10px 50px;
+}
+
+.table-article td:last-child {
+    padding: 10px 20px;
+}
+
+.table-sub_cat {
+    padding: 0;
+}
+
+.table-add_cat td {
+    gap: 10px;
+    padding: 10px 20px;
+}
+
+.table-add_article td {
+    gap: 10px;
+    padding: 10px 40px;
+}
+
+.table-button {
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    gap: 10px;
+    margin-left: -4px;
+}

@@ -1,0 +1,39 @@
+{{ form_start(form, {'attr':{'class':'form'}}) }}
+<div class="row">
+    <label class="label" for="name">
+        <p>Nom du membre</p>
+    </label>
+    {{ form_errors(form.nom) }}
+    {{ form_widget(form.nom) }}
+</div>
+<div class="row">
+    <label class="label" for="surname">
+        <p>Prénom du membre</p>
+    </label>
+    {{ form_errors(form.prenom) }}
+    {{ form_widget(form.prenom) }}
+</div>
+<div class="row">
+    <label class="label" for="mail">
+        <p>Adresse mail</p>
+    </label>
+    {{ form_errors(form.email) }}
+    {{ form_widget(form.email) }}
+</div>
+
+<div class="row">
+    <label class="label" for="access">
+        <p>Sélectionner un niveau d'accés</p>
+    </label>
+    {{ form_errors(form.roles) }}
+    {{ form_widget(form.roles) }}
+
+</div>
+<div>
+    <button class="bouton-1"> <span>Enregistrer</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14">
+            <path id="chevron-down" d="M.293,7.707a1,1,0,0,0,1.414,0L7,2.414l5.293,5.293a1,1,0,0,0,1.414-1.414l-6-6a1,1,0,0,0-1.414,0l-6,6A1,1,0,0,0,.293,7.707Z" transform="translate(8) rotate(90)"/>
+        </svg></button>
+    </button>
+</div>
+{{ form_end(form) }}

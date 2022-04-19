@@ -1,0 +1,38 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block title %}Utilisateur{% endblock %}
+    {% block body %}
+
+        {{ include('_includes/navigation.html.twig') }}
+        <section class="section-content">
+            <div class="content">
+                <div class="content-title">
+                    <h1 style="flex: none">Modifier votre profil</h1>
+                    <a class="bouton-1" href="{{ path('admin_index') }}">Quitter <i class="fas fa-times"></i></a>
+                </div>
+                <div class="content-table">
+                    {% for message in app.flashes('success') %}
+                        <div class="greenalert">
+                            <div class="close" id="close" onclick="$('.fas').parents('.greenalert').remove();"><i
+                                        class="fas fa-times"></i></div>
+                            <div class="success-alert">
+                                <p>{{ message }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% for message in app.flashes('danger') %}
+                        <div class="redalert">
+                            <div class="close" id="close" onclick="$('.fas').parents('.redalert').remove();"><i
+                                        class="fas fa-times"></i></div>
+                            <div class="danger-alert">
+                                <p>{{ message }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <a class="bouton-1" href="{{ path('user_profil_mail',{id:app.user.id}) }}">Modifier votre mail</a>
+                    <a class="bouton-1" href="{{ path('user_profil_password',{id:app.user.id}) }}">Modifier votre mot de
+                        passe</a>
+                </div>
+            </div>
+        </section>
+    {% endblock %}
+

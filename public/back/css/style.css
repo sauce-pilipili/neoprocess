@@ -1,0 +1,370 @@
+body {
+    display: flex;
+    background-color: var(--bg);
+}
+
+
+
+/* CONTENT */
+.message{
+    position: fixed;
+    z-index: 2;
+    left: 50%;
+    top: 40px;
+}
+.message p{
+    color: #ffffff;
+}
+
+.greenalert{
+    background-color: rgba(108, 229, 79, 0.73);
+    color: #FFFFFF;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+.redalert{
+    background-color: rgba(229, 79, 79, 0.73);
+    color: #FFFFFF;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
+
+.section-content {
+    width: 80%;
+    margin: 0 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.content {
+    width: 90%;
+    margin: 5% 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content-title,
+.content-intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.content-title_row {
+    display: flex;
+    gap: 10px;
+}
+
+.content-intro-index{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+.content-intro_row,
+.content-intro_row a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.content-intro_row p {
+    font-weight: bold;
+}
+
+.content-form {
+    background-color: var(--color-white);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 60px;
+}
+
+.content-form_title {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-table {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--color-white);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+}
+
+
+.welcome-container-title{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* SVG */
+
+nav svg path {
+    fill: var(--color-text);
+}
+
+
+/* TABLEAUX */
+
+
+table {
+    width: 100%;
+    font-family: var(--font-text);
+    border-collapse: collapse;
+}
+
+table .table-title {
+    background-color: var(--form);
+    font-weight: bold;
+}
+
+.content-table_article td:nth-child(2) {
+    text-align: end;
+}
+
+table td {
+    border-bottom: 1px solid var(--border);
+    color: var(--color-text);
+}
+
+tr:hover {
+    background-color: var(--form);
+    border-radius: 5px;
+}
+
+.table-cat td,
+table .table-title td,
+.table-row td {
+    padding: 10px 20px;
+}
+
+.table-row_action {
+    display: flex;
+    justify-content: end;
+}
+
+.table-sub_cat td {
+    padding: 10px 20px 10px 30px;
+}
+
+.table-article td:first-child {
+    padding: 10px 50px;
+}
+
+.table-article td:last-child {
+    padding: 10px 20px;
+}
+
+.table-sub_cat {
+    padding: 0;
+}
+
+.table-add_cat td {
+    gap: 10px;
+    padding: 10px 20px;
+}
+
+.table-add_article td {
+    gap: 10px;
+    padding: 10px 40px;
+}
+
+.table-button {
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    gap: 10px;
+    margin-left: -4px;
+}
+
+/* FORMULAIRE DE RECHERCHE */
+
+.form-search {
+    border: 1px solid var(--border);
+    background-color: var(--color-white);
+    padding: 10px;
+    border-radius: 5px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.form-search_button {
+    background-image: url(../img/rechercher.svg); /* 16px x 16px */
+    background-color: transparent; /* make the button transparent */
+    background-repeat: no-repeat;  /* make the background image appear only once */
+    background-position: 0px 0px;  /* equivalent to 'top left' */
+    border: none;           /* assuming we don't want any borders */
+    cursor: pointer;        /* make the cursor like hovering over an <a> element */
+    height: 16px;           /* make this the size of your image */
+    padding-left: 16px;     /* make text start to the right of the image */
+    vertical-align: middle; /* align the text vertically centered */
+    background-size: cover;
+}
+
+.form-search_input {
+    border: none;
+    width: 300px;
+}
+
+.form-search_input:focus-visible {
+    outline: none;
+}
+
+
+/* FORMULAIRE D'AJOUT/MODIFICATION */
+
+.content-form .form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.content-form .form .row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.content-form .form .row-2 {
+    display: flex;
+    gap: 30px;
+    align-items: flex-end;
+}
+
+.input,
+select, 
+textarea {
+    border: 1px solid var(--color-text);
+    color: var(--item-form);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+}
+
+.content-form .form .row .label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.inputfile,
+.inputfiledoc {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+}
+
+.bloc-inputfile {
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    min-height: 150px;
+    border: 1px dotted;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.image-preview{
+    width: 250px;
+}
+
+.inputfiledoc + label {
+    font-size: 1rem;
+    color: var(--color-text);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+}
+
+.bloc-inputfiledoc {
+    border: 1px solid var(--color-text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+/* LES BOUTONS */
+
+.bouton-1 {
+    background: linear-gradient(128deg, rgb(98, 98, 75) 0%, rgb(108, 136, 173) 50%);
+    padding: 15px;
+    width: fit-content;
+    font-family: var(--font-text);
+    font-size: var(--size-text);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    color: var(--color-white);
+    border: none;
+}
+
+.bouton-1 svg path {
+    fill: var(--color-white);
+}
+
+.bouton-1:hover {
+    background: transparent;
+    color: var(--color-text);
+}
+
+.bouton-1:hover svg path {
+    fill: var(--color-text);
+}
+
+.bouton-2 {
+    font-family: var(--font-text);
+    font-size: var(--size-text);
+    color: var(--color-text);
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 13px;
+    border: 2px solid var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.bouton-2 svg path {
+    fill: var(--color-text);
+}
+
+.bouton-2:hover {
+    border: 2px solid transparent;
+}
+

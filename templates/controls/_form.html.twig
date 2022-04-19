@@ -1,0 +1,42 @@
+{{ form_start(form) }}
+<p>nom du controle</p>
+{{ form_widget(form.name) }}
+{#{{ form_widget(form.documents,{'attr': {'onchange':"input(this)"}}) }}#}
+
+<div class="row">
+    <label class="label" for="type-contenant">
+        <h2>Liste des documents a fournir</h2>
+    </label>
+    {{ form_errors(form.name) }}
+    <button class="bouton-1 btn-new" type="button" data-collection="#volumes">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24" width="24">
+            <path xmlns="http://www.w3.org/2000/svg"
+                  d="M12 4C12.5523 4 13 4.44772 13 5V11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H13V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11V5C11 4.44772 11.4477 4 12 4Z"
+                  fill="#0D0D0D"></path>
+        </svg>
+        Ajouter un documents
+    </button>
+    <div
+            id="volumes"
+            class="row-add"
+            data-prototype="{{ include("documents/_documents.html.twig", {form: form.documents.vars.prototype})|e("html_attr") }}"
+            data-index="{{ form.documents|length > 0 ? form.documents|last.vars.name + 1 : 0 }}">
+        {% for doc in form.documents %}
+            <div class="col-4">
+                {{ include("documents/_documents.html.twig", {form: doc}) }}
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
+<button class="btn">{{ button_label|default('Enregitrer') }}</button>
+{{ form_end(form) }}
+<script>
+
+    function input(value) {
+        console.log(value.value)
+        document.getElementById("documents_name").value = value.value;
+    }
+</script>
+
+<script src="{{ asset('back/js/collectionHolder.js') }}"></script>

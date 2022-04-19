@@ -1,0 +1,65 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block title %}dossiers{% endblock %}
+{% block body %}
+    {{ include('_includes/navigation.html.twig') }}
+    <section class="section-content">
+        <div class="content">
+            <div class="content-title">
+                <h1 style="flex: none">Titre</h1>
+                <a class="bouton-1" href="{{ path('admin_index') }}">Quitter <i class="fas fa-times"></i></a>
+            </div>
+            <div>
+                {% for message in app.flashes('success') %}
+                    <div class="greenalert">
+                        <div class="close" id="close" onclick="$('.fas').parents('.greenalert').remove();"><i
+                                    class="fas fa-times"></i></div>
+                        <div class="success-alert">
+                            <p>{{ message }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% for message in app.flashes('danger') %}
+                    <div class="redalert">
+                        <div class="close" id="close" onclick="$('.fas').parents('.redalert').remove();"><i
+                                    class="fas fa-times"></i></div>
+                        <div class="danger-alert">
+                            <p>{{ message }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="content-table">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for dossier in dossiers %}
+                        <tr>
+                            <td>{{ dossier.id }}</td>
+                            <td>{{ dossier.nom }}</td>
+                            <td>{{ dossier.prenom }}</td>
+                            <td>
+                                <a href="{{ path('app_dossiers_show', {'id': dossier.id}) }}">show</a>
+                                <a href="{{ path('app_dossiers_edit', {'id': dossier.id}) }}">edit</a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="4">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

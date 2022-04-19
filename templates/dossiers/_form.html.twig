@@ -1,0 +1,11 @@
+{{ form_start(form) }}
+    {{ form_widget(form.nom) }}
+{{ form_widget(form.prenom) }}
+{#{% for dos in pieces %}#}
+{#    {{ dump(dossier) }}#}
+{#    {{ dos }}#}
+{#    {{ form_row(attribute(form,'piece_'~(loop.index-1))) }}#}
+{#    <iframe src="{{ asset('clientsFiles/') }}{{ attribute(dossier,'piece'~(loop.index-1)) }}#toolbar=0" width="50%" height="800px"></iframe>#}
+{#{% endfor %}#}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

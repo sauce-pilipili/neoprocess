@@ -1,0 +1,59 @@
+:root {
+    --color-text: #385667;
+    --color-white: #FFFFFF;
+    --shadow: 5px 5px 30px #4a4a4a10;
+    --item-form: #5F5F5F; 
+    --form: #F2F2F2;
+    --bg: #F8F8F8;
+    --border: #E2E2E2;
+    --font-title: 'Fira Sans', sans-serif;
+    --font-text: 'Fira Sans', sans-serif;
+    --size-h1: 1.8rem;
+    --size-h2: 1.5rem;
+    --size-h3: 1rem;
+    --size-text: 1rem;
+}
+
+* {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-family: var(--font-text);
+}
+
+p {
+    font-family: var(--font-text);
+    color: var(--color-text);
+}
+
+input, label, select, textarea {
+    font-family: var(--font-text);
+} 
+
+label p,
+p.label {
+    font-weight: bold;
+    color: var(--color-text);
+    font-size: 1.2rem;
+} 
+
+ul {
+    list-style-type: none;
+}
+
+h1 {
+    font-family: var(--font-title);
+    font-size: var(--size-h1);
+    color: var(--color-text);
+}
+
+h2 {
+    font-family: var(--font-title);
+    font-size: var(--size-h2);
+    color: var(--color-text);
+}

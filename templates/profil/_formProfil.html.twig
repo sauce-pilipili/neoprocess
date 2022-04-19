@@ -1,0 +1,15 @@
+{{ form_start(form) }}
+{% if app.request.attributes.get('_route') == 'user_profil_mail' %}
+<p>Ajouter une adresse mail</p>
+{{ form_row(form.email) }}
+{% endif %}
+{% if app.request.attributes.get('_route') == 'user_profil_password' %}
+<p>Votre mot de passe actuel</p>
+{{ form_row(form.ActualPassword) }}
+<p>Votre nouveau mot de passe</p>
+{{ form_row(form.password) }}
+<p>Confirmez votre mot de passe</p>
+{{ form_row(form.password2) }}
+{% endif %}
+<button class="bouton-1">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    <link rel="stylesheet" href="{{ asset('Back/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('Back/css/root.css') }}">
+    <link rel="stylesheet" href="{{ asset('Back/css/navigation.css') }}">
+    <link rel="stylesheet" href="{{ asset('Back/css/table.css') }}">
+    <link rel="stylesheet" href="{{ asset('Back/css/dropdown.css') }}">
+    {% block stylesheets %}
+    {% endblock %}
+
+
+    {% block javascripts %}
+    {% endblock %}
+</head>
+<body>
+<script>
+
+    function closed(value){
+        console.log('coucou')
+        const close = document.getElementById(value);
+        alert(close)
+        close.style.display = "none";
+    }
+</script>
+<div class="message">
+    {% for message in app.flashes('success') %}
+        <div class="greenalert">
+            <div class="success-alert">
+                <p>{{ message }}</p>
+            </div>
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('danger') %}
+        <div class="redalert">
+            <div class="danger-alert">
+                <p>{{ message }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% block body %}{% endblock %}
+</body>
+</html>

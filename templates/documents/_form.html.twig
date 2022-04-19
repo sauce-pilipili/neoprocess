@@ -1,0 +1,18 @@
+{{ form_start(form) }}
+    {{ form_widget(form.name) }}
+{{ form_widget(form.documents,{'attr': {'onchange':"input(this)"}}) }}
+
+
+<button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+
+
+<script>
+
+    function input(value) {
+        console.log(value.value)
+        document.getElementById("documents_name").value = value.value;
+    }
+</script>
+
+<script src="{{ asset('back/js/collectionHolder.js') }}"></script>
